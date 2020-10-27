@@ -1,0 +1,66 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Aug  5 15:17:38 2020
+@author: Kabir
+student failure analysis
+"""
+
+
+import numpy as np
+import pandas as pd
+"""
+Loading the data
+"""
+data = pd.read_csv('dstudent_ratings.csv')
+data.head(30)
+subject_titles_genre = pd.read_csv('student_subject.csv')
+subject_titles_genre.head(5)
+
+data = data.merge(subject_titles_genre,on='subject_id', how='left')
+data.head(30)
+
+print('loading 30 data -> \n', data.head(30))
+"""
+Average Rating
+
+The dataset is a collection of ratings by a number of users for different movies. Let’s find out the average rating for each and every movie in the dataset.
+"""
+Average_ratings = (pd.DataFrame(data.groupby('title')['rating'].mean())).sort_values(by='rating',ascending=True)
+Average_ratings.head(30)
+"""Average_ratings.sort_values(by='rating')"""
+print('Average_ratings -> \n', Average_ratings.head(30))
+
+""" Total Number Of Rating 
+
+The rating of a movie is proportional to the total number of ratings it has. Therefore, we will also consider the total ratings cast for each movie. """
+
+Average_ratings['Total Ratings'] = pd.DataFrame(data.groupby('title')['rating'].count())
+Average_ratings.head(30)
+print('Average_ratings -> \n', Average_ratings.head(30))
+
+""" Building The Recommender
+Calculating The Correlation """
+
+subject_user = data.pivot_table(index='stu_id',columns='title',values='rating')
+subject_user.head(30)
+
+correlations = subject_user.corrwith(subject_user['english'])
+correlations.head()
+
+recommendation = pd.DataFrame(correlations,columns=['Correlation'])
+recommendation.dropna(inplace=True)
+recommendation = recommendation.join(Average_ratings['Total Ratings'])
+recommendation.head()
+
+print('recommendation -> \n', recommendation.head(30))
+
+""" Testing The Recommendation System
+
+Let’s filter all the movies with a correlation value to Toy Story (1995) and with at least 100 ratings."""
+
+recc = recommendation[recommendation['Total Ratings']<30].sort_values('Correlation',ascending=True).reset_index()
+
+recc = recc.merge(subject_titles_genre,on='title', how='left')
+recc.head()
+
+print('Testing The Recommendation System -> \n ',recc.head(10))
