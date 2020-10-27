@@ -1,0 +1,419 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Aug  6 22:30:01 2020
+
+@author: Kabir
+
+multiple question
+
+"""
+import csv
+
+stu_id = input("Enter your Student ID: ") 
+print("English MCQ")
+score = 0
+# question 1
+answer1 = input('1. Indicate the complex sentence- ? \n a. Nazma asked some favour of her friends. \n b. Kawsar is such a good man that you can fully rely on him. \n c. Rahim says what he means and he means what he says. \n d. Grief turned his hair gray. \n Answer: ')
+if answer1 == "b" or answer1 == "Kawsar is such a good man that you can fully rely on him.":
+    score += 1
+    print("Corrrect")
+    print("score: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is Kawsar is such a good man that you can fully rely on him.")
+    print("score:", score)
+    print("\n")
+
+# question 2
+answer2 = input('2. The antonym for the word ‘resemblance’ is- \n a. Identity \n b. Similarity \n c. Difference \n d. Dissembling \n Answer: ')
+if answer2 == "c" or answer2 == "Difference":
+    score += 1
+    print("Corrrect")
+    print("score: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is Difference")
+    print("score:", score)
+    print("\n")
+    
+    # question 3
+answer3 = input('3. ‘Dog days’ means- \n a. a period of being carefree \n b. a period of having youthful flings \n c. a period of misfortune \n d. hot weather \n Answer: ')
+if answer3 == "d" or answer3 == "hot weather":
+    score += 1
+    print("Corrrect")
+    print("score: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is hot weather")
+    print("score:", score)
+    print("\n")
+    
+    # question 4
+answer4 = input('4. Can you tell me where ____? \n a. does Mr. Ali live \n b. Mr. Ali does live \n c. Mr. Ali lives \n d. Mr. Ali live\n Answer: ')
+if answer4 == "c" or answer4 == "Mr. Ali lives":
+    score += 1
+    print("Corrrect")
+    print("score: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is Mr. Ali lives")
+    print("score:", score)
+    print("\n")
+    
+    # question 5
+answer5 = input('5. In many ways, riding a bicycle is similar to – \n a. driving a car \n b. when one drives a car \n c. the driving of a car \n d. when we drive a car \n Answer: ')
+if answer5 == "a" or answer5 == "driving a car":
+    score += 1
+    print("Corrrect")
+    print("Your score in english  out of 5 is: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is driving a car")
+    print("Your score in english  out of 5 is: ",score)
+    print("\n")
+
+def append_dict_as_row(file_name, dict_of_elem, field_names):
+    # Open file in append mode
+    with open(file_name, 'a+', newline='') as write_obj:
+        # Create a writer object from csv module
+        dict_writer = csv.DictWriter(write_obj, fieldnames=field_names)
+        # Add dictionary as row in the csv
+        dict_writer.writerow(dict_of_elem)
+
+field_names = ['stu_id','subject_id', 'marks']
+row_dict = {'stu_id': stu_id,'subject_id': '101', 'marks': score}
+append_dict_as_row('dstudent_ratings.csv', row_dict, field_names)
+   
+
+
+  
+print("Bangla MCQ")
+score = 0
+# question 1
+answer1 = input('1. বুলবুলিতে ধান খেয়েছে”- এই বাক্যের ‘বুলবুলিতে’ শব্দে কোন কারকে কোন বিভক্তি রয়েছে? \n a. করণে সপ্তমী \n b. অধিকরণে সপ্তমী \n c. কর্তাকারকে সপ্তমী \n d. অপাদানে সপ্তমী \n Answer: ')
+if answer1 == "c" or answer1 == "কর্তাকারকে সপ্তমী":
+    score += 1
+    print("Corrrect")
+    print("score: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is কর্তাকারকে সপ্তমী2")
+    print("score:", score)
+    print("\n")
+
+# question 2
+answer2 = input('2. কোন বানানটি শুদ্ধ? \n a. নিঢরহ \n b. নীরিহ \n c. নীরীহ \n d. নিরীহ \n Answer: ')
+if answer2 == "d" or answer2 == "নিরীহ":
+    score += 1
+    print("Corrrect")
+    print("score: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is নিরীহ")
+    print("score:", score)
+    print("\n")
+    
+    # question 3
+answer3 = input('3. "যার বাসস্থান নেই"  বাক্যের এক কথায় প্রকাশ কি ? \n a. অনিকেতন \n b. উদ্বাস্তু \n c. অনুজ \n d. একাহারী \n Answer: ')
+if answer3 == "a" or answer3 == "অনিকেতন":
+    score += 1
+    print("Corrrect")
+    print("score: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is অনিকেতন")
+    print("score:", score)
+    print("\n")
+    
+    # question 4
+answer4 = input('4. মুখ তোলা বাক্যাংশের বিশিষ্ট অর্থ কি? \n a. নিজের মুখ উপরে তোলা \n b. অন্যের মুখ তুলে ধরা \n c. প্রসন্ন হওয়া \n d. নষ্ট করা \n Answer: ')
+if answer4 == "c" or answer4 == "প্রসন্ন হওয়া":
+    score += 1
+    print("Corrrect")
+    print("score: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is প্রসন্ন হওয়া")
+    print("score:", score)
+    print("\n")
+    
+    # question 5
+answer5 = input('5. যা নিন্দার যোগ্য নয়- \n a. নিন্দনীয় \n b. প্রশংসনীয় \n c. অনিন্দ্য \n d. প্রশংসার যোগ্য \n Answer: ')
+if answer5 == "c" or answer5 == "অনিন্দ্য":
+    score += 1
+    print("Corrrect")
+    print("Your score in bangla  out of 5 is: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is অনিন্দ্য")
+    print("Your score in bangla  out of 5 is: ",score)
+    print("\n")
+
+def append_dict_as_row(file_name, dict_of_elem, field_names):
+    # Open file in append mode
+    with open(file_name, 'a+', newline='') as write_obj:
+        # Create a writer object from csv module
+        dict_writer = csv.DictWriter(write_obj, fieldnames=field_names)
+        # Add dictionary as row in the csv
+        dict_writer.writerow(dict_of_elem)
+
+field_names = ['stu_id','subject_id', 'marks']
+row_dict = {'stu_id': stu_id,'subject_id': '102', 'marks': score}
+append_dict_as_row('dstudent_ratings.csv', row_dict, field_names)
+
+
+
+
+print("Math MCQ")
+score = 0
+# question 1
+answer1 = input('1. The average of first 50 natural numbers is: \n a. 25.30 \n b. 25.50 \n c. 25.00 \n d. 12.25 \n Answer: ')
+if answer1 == "b" or answer1 == "25.50":
+    score += 1
+    print("Corrrect")
+    print("score: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is 25.50")
+    print("score:", score)
+    print("\n")
+
+# question 2
+answer2 = input('2. A clock strikes once at 1 o’clock, twice at 2 o’clock, thrice at 3 o’clock and so on. How many times will it strike in 24 hours? \n a. 78 \n b. 136 \n c. 156 \n d. 196 \n Answer: ')
+if answer2 == "c" or answer2 == "156":
+    score += 1
+    print("Corrrect")
+    print("score: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is 156")
+    print("score:", score)
+    print("\n")
+    
+    # question 3
+answer3 = input('3. All natural numbers and 0 are called the ………………. numbers. \n a. whole \n b. prime \n c. integer \n d. rational \n Answer: ')
+if answer3 == "a" or answer3 == "whole":
+    score += 1
+    print("Corrrect")
+    print("score: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is whole")
+    print("score:", score)
+    print("\n")
+    
+    # question 4
+answer4 = input('4. The wages of 10 workers for a six-day week is $ 1200. What are the one day’s wages of 4 workers? \n a. $ 40 \n b. $ 32 \n c. $ 80 \n d. $ 24 \n Answer: ')
+if answer4 == "c" or answer4 == "$ 80":
+    score += 1
+    print("Corrrect")
+    print("score: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is $ 80")
+    print("score:", score)
+    print("\n")
+    
+    # question 5
+answer5 = input('5. What percentage should be added to 40 to make it 50? \n a. 15 \n b. 25 \n c. 75 \n d. 80 \n Answer: ')
+if answer5 == "b" or answer5 == "25":
+    score += 1
+    print("Corrrect")
+    print("Your score in math  out of 5 is: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is 25")
+    print("Your score in math  out of 5 is: ",score)
+    print("\n")
+
+def append_dict_as_row(file_name, dict_of_elem, field_names):
+    # Open file in append mode
+    with open(file_name, 'a+', newline='') as write_obj:
+        # Create a writer object from csv module
+        dict_writer = csv.DictWriter(write_obj, fieldnames=field_names)
+        # Add dictionary as row in the csv
+        dict_writer.writerow(dict_of_elem)
+
+field_names = ['stu_id','subject_id', 'marks']
+row_dict = {'stu_id': stu_id,'subject_id': '103', 'marks': score}
+append_dict_as_row('dstudent_ratings.csv', row_dict, field_names)
+
+
+
+
+print("GK MCQ")
+score = 0
+# question 1
+answer1 = input('1. Which country is known as the country of white elephant? ? \n a. Nepal \n b. Nigeria \n c. Africa \n d. Thailand \n Answer: ')
+if answer1 == "d" or answer1 == "Thailand":
+    score += 1
+    print("Corrrect")
+    print("score: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is Thailand")
+    print("score:", score)
+    print("\n")
+
+# question 2
+answer2 = input('2. Which plateau of the world is known as the "Roof of the World"? \n a. Deccan plateau \n b. Pamir plateau \n c. Khorat plateau \n d. Katanga plateau \n Answer: ')
+if answer2 == "b" or answer2 == "Pamir plateau":
+    score += 1
+    print("Corrrect")
+    print("score: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is Pamir plateau")
+    print("score:", score)
+    print("\n")
+    
+    # question 3
+answer3 = input('3. Which cricketer has became the fastest cricketer to score 7,000 Test runs? \n a. Joe Root \n b. Virat Kohli \n c. Steve Smith \n d. Hashim Amla \n Answer: ')
+if answer3 == "c" or answer3 == "Steve Smith":
+    score += 1
+    print("Corrrect")
+    print("score: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is Steve Smith")
+    print("score:", score)
+    print("\n")
+    
+    # question 4
+answer4 = input('4. Which of the following is not considered a primary color of light? \n a. Green \n b. Blue \n c. Red \n d. Yellow \n Answer: ')
+if answer4 == "d" or answer4 == "Yellow":
+    score += 1
+    print("Corrrect")
+    print("score: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is Yellow")
+    print("score:", score)
+    print("\n")
+    
+    # question 5
+answer5 = input('5. For which literary work as Rabindranath Tagore awarded with the novel prize? \n a. Khanika \n b. Sonartori \n c. Sanchita \n d. Gitanjali \n Answer: ')
+if answer5 == "d" or answer5 == "Gitanjali":
+    score += 1
+    print("Corrrect")
+    print("Your score in IQ  out of 5 is: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is Dhaka")
+    print("Your score in IQ  out of 5 is: ",score)
+    print("\n")
+
+def append_dict_as_row(file_name, dict_of_elem, field_names):
+    # Open file in append mode
+    with open(file_name, 'a+', newline='') as write_obj:
+        # Create a writer object from csv module
+        dict_writer = csv.DictWriter(write_obj, fieldnames=field_names)
+        # Add dictionary as row in the csv
+        dict_writer.writerow(dict_of_elem)
+
+field_names = ['stu_id','subject_id', 'marks']
+row_dict = {'stu_id': stu_id,'subject_id': '104', 'marks': score}
+append_dict_as_row('dstudent_ratings.csv', row_dict, field_names)
+
+
+
+print("\n")
+print("IQ MCQ")
+score = 0
+# question 1
+answer1 = input('1. Book is to Reading as Fork is to: \n a. Drawing \n b. Writing \n c. Stirring \n d. Eating \n Answer: ')
+if answer1 == "d" or answer1 == "Eating":
+    score += 1
+    print("Corrrect")
+    print("score: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is Eating")
+    print("score:", score)
+    print("\n")
+
+# question 2
+answer2 = input('2. 8:4 as 10: \n a. 3 \n b. 7 \n c. 24 \n d. 5 \n Answer: ')
+if answer2 == "d" or answer2 == "5":
+    score += 1
+    print("Corrrect")
+    print("score: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is 5")
+    print("score:", score)
+    print("\n")
+    
+    # question 3
+answer3 = input('3. Find two words, one from each group, that are the closest in meaning: \n a. talkative and wind \n b. job and angry \n c. talkative and loquacious \n d. ecstatic and angry \n Answer: ')
+if answer3 == "c" or answer3 == "talkative and loquacious":
+    score += 1
+    print("Corrrect")
+    print("score: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is talkative and loquacious")
+    print("score:", score)
+    print("\n")
+    
+    # question 4
+answer4 = input('4. 7, 10, 16, 28, 52, ___ \n a. 88 \n b. 100 \n c. 66 \n d. 76 \n Answer: ')
+if answer4 == "b" or answer4 == "100":
+    score += 1
+    print("Corrrect")
+    print("score: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is 100")
+    print("score:", score)
+    print("\n")
+    
+  
+    # question 5
+answer5 = input('5. Two people can make 2 bicycles in 2 hours. How many people are needed to make 12 bicycles in 6 hours? \n a. 6 \n b. 4 \n c. 2 \n d. 1 \n Answer: ')
+if answer5 == "b" or answer5 == "4":
+    score += 1
+    print("Corrrect")
+    print("Your score in GK  out of 5 is: ",score)
+    print("\n")
+else:
+    print("Incorrect ! \n The answer is 4")
+    print("Your score in GK  out of 5 is: ",score)
+    print("\n")
+
+def append_dict_as_row(file_name, dict_of_elem, field_names):
+    # Open file in append mode
+    with open(file_name, 'a+', newline='') as write_obj:
+        # Create a writer object from csv module
+        dict_writer = csv.DictWriter(write_obj, fieldnames=field_names)
+        # Add dictionary as row in the csv
+        dict_writer.writerow(dict_of_elem)
+
+field_names = ['stu_id','subject_id', 'marks']
+row_dict = {'stu_id': stu_id,'subject_id': '105', 'marks': score}
+append_dict_as_row('dstudent_ratings.csv', row_dict, field_names)
+
+"""
+ 
+  
+  
+f = open('mcq_marks_input.csv', 'r')
+reader = csv.reader(f)
+mylist = list(reader)
+
+for row in reader:
+    if mylist[row][1] == '104':
+        print('mylist[row][1]',mylist[row][1])
+        mylist[row][2] = score
+        print('mylist[row][2]',mylist[row][2])
+my_new_list = open('mcq_marks_input.csv', 'w', newline = '')
+csv_writer = csv.writer(my_new_list)
+csv_writer.writerows(mylist)
+my_new_list.close()
+
+f.close()
+
+
+
+
+"""
